@@ -38,7 +38,7 @@ public class UserTest {
 
         List<User> actual = new ArrayList<>();
         actual.add(user1);
-        actual.add(user);
+        actual.add(user2);
 
         assertEquals(expected, actual);
     }
@@ -109,9 +109,51 @@ public class UserTest {
 
     @Test
     public void getAverageAgeOfAllUsers() {
+        List<User> expected = User.getAllUsers();
+
+        int expectedCountAge = 0;
+        for (User user : expected) {
+            expectedCountAge += user.getAge();
+        }
+        
+        int expectedAverageAge = expectedCountAge / expected.size();
+
+        List<User> actual = new ArrayList<>();
+        actual.add(user);
+        actual.add(user1);
+        actual.add(user2);
+
+        int actualCountAge = 0;
+        for (User user : actual) {
+            actualCountAge += user.getAge();
+        }
+        
+        int actualAverageAge = actualCountAge / expected.size();
+
+        assertEquals(expectedAverageAge, actualAverageAge);
     }
 
     @Test
     public void testGetAverageAgeOfAllUsers() {
+        List<User> expected = User.getAllUsers(Sex.MALE);
+
+        int expectedCountAge = 0;
+        for (User user : expected) {
+            expectedCountAge += user.getAge();
+        }
+
+        int expectedAverageAge = expectedCountAge / expected.size();
+
+        List<User> actual = new ArrayList<>();
+        actual.add(user);
+
+        int actualCountAge = 0;
+        for (User user : actual) {
+            actualCountAge += user.getAge();
+        }
+
+        int actualAverageAge = actualCountAge / expected.size();
+
+        assertEquals(expectedAverageAge, actualAverageAge);
     }
 }
