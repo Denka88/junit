@@ -20,6 +20,11 @@ public class UserTest {
         user2 = new User("Алина", 7, Sex.FEMALE);
     }
 
+    /**
+     * Тестирование метода getAllUsers
+     * Сравнивает список пользователей с ожидаемым результатом
+     * Если пользователи не совпадают, то ошибка
+     */
     @Test
     public void getAllUsers() {
         List<User> expected = User.getAllUsers();
@@ -32,6 +37,11 @@ public class UserTest {
         assertEquals(expected, actual);
     }
 
+    /**
+     * Тестирование метода testGetAllUsers
+     * Сравнивает список пользователей по полу, с ожидаемым результатом
+     * Если пользователи не совпадают, то ошибка
+     */
     @Test
     public void testGetAllUsers() {
         List<User> expected = User.getAllUsers(Sex.FEMALE);
@@ -43,6 +53,11 @@ public class UserTest {
         assertEquals(expected, actual);
     }
 
+    /**
+     * Тестирование метода getHowManyUsers
+     * Сравнивает количество пользователей с ожидаемым результатом
+     * Если количество пользователей не совпадает, то ошибка
+     */
     @Test
     public void getHowManyUsers() {
         List<User> expected = User.getAllUsers();
@@ -55,6 +70,11 @@ public class UserTest {
         assertEquals(expected.size(), actual.size());
     }
 
+    /**
+     * Тестирование метода testGetHowManyUsers
+     * Сравнивает количество пользователей по полу, с ожидаемым результатом
+     * Если количество пользователей и пол не совпадает, то ошибка
+     */
     @Test
     public void testGetHowManyUsers() {
         List<User> expected = User.getAllUsers(Sex.MALE);
@@ -65,6 +85,11 @@ public class UserTest {
         assertEquals(expected.size(), actual.size());
     }
 
+    /**
+     * Тестирование метода getAllAgeUsers
+     * Сравнивает количество пользователей по возрасту, с ожидаемым результатом
+     * Если количество пользователей не совпадает, то ошибка
+     */
     @Test
     public void getAllAgeUsers() {
         List<User> expected = User.getAllUsers();
@@ -87,6 +112,11 @@ public class UserTest {
         assertEquals(expectedCountAge, actualCountAge);
     }
 
+    /**
+     * Тестирование метода testGetAllAgeUsers
+     * Сравнивает количество пользователей по возрасту и по полу, с ожидаемым результатом
+     * Если количество пользователей не совпадает, то ошибка
+     */
     @Test
     public void testGetAllAgeUsers() {
         List<User> expected = User.getAllUsers(Sex.MALE);
@@ -107,6 +137,11 @@ public class UserTest {
         assertEquals(expectedCountAge, actualCountAge);
     }
 
+    /**
+     * Тестирование метода getAverageAgeOfAllUsers
+     * Сравнивает средний возраст пользователей, с ожидаемым результатом
+     * Если средний возраст не совпадает, то ошибка
+     */
     @Test
     public void getAverageAgeOfAllUsers() {
         List<User> expected = User.getAllUsers();
@@ -133,6 +168,11 @@ public class UserTest {
         assertEquals(expectedAverageAge, actualAverageAge);
     }
 
+    /**
+     * Тестирование метода testGetAverageAgeOfAllUsers
+     * Сравнивает средний возраст пользователей по полу, с ожидаемым результатом
+     * Если средний возраст и пол не совпадает, то ошибка
+     */
     @Test
     public void testGetAverageAgeOfAllUsers() {
         List<User> expected = User.getAllUsers(Sex.MALE);
